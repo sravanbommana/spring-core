@@ -1,9 +1,12 @@
 package com.sravan.spring.springcore;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class Patient implements InitializingBean, DisposableBean{
+public class Patient {
 	private int id;
 	private String name;
 
@@ -23,15 +26,14 @@ public class Patient implements InitializingBean, DisposableBean{
 		this.name = name;
 	}
 	
-
-	@Override
-	public void destroy() throws Exception {
-		System.out.println("Destroying Bean");
+	@PostConstruct
+	public void init() {
+		System.out.println("Initialize bean 1");
 	}
-
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		System.out.println("Initiating Bean");
+	
+	@PreDestroy
+	public void destory() {
+		System.out.println("Destorying bean 1");
 	}
 
 	@Override
