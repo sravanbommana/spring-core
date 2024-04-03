@@ -6,19 +6,8 @@
 	http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<bean name="scores" class="com.sravan.spring.springcore.Scores">
-		<property name="mathScore" value="89"></property>
-		<property name="scienceScore" value="90"></property>
-		<property name="socialScore" value="99"></property>
+	<bean name="patient" class="com.sravan.spring.springcore.Patient" 
+		p:id="20" p:name="Alpha" init-method="init" destroy-method="destroy">
 	</bean>
-	<bean name="student" class="com.sravan.spring.springcore.Student">
-		<property name="scores" ref="scores"></property>
-		<!--<property name="scores">
-			<ref bean="scores" />
-		</property>-->
-	</bean>
-	<!--using p schema we achieve the same 
-	<bean name="student1" class="com.sravan.spring.springcore.Hospital" 
-		p:studentName="Pavan" p:schoolName="Sahitya">
-	</bean> -->
+
 </beans>
