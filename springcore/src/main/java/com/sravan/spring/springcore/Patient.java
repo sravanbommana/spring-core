@@ -1,6 +1,9 @@
 package com.sravan.spring.springcore;
 
-public class Patient {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Patient implements InitializingBean, DisposableBean{
 	private int id;
 	private String name;
 
@@ -19,15 +22,18 @@ public class Patient {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 
-	public void init() {
-		System.out.println("Inside init");
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("Destroying Bean");
 	}
-	
-	public void destroy() {
-		System.out.println("Inside destroy");
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Initiating Bean");
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Patient [id=" + id + ", name=" + name + "]";
