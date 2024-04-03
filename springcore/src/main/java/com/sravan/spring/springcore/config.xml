@@ -6,14 +6,13 @@
 	http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<!--<context:annotation-config></context:annotation-config> -->
-	<bean name="student" class="com.sravan.spring.springcore.Student" p:name="Beta" scope="prototype">
-		<property name="address">
-			<bean name="address" class="com.sravan.spring.springcore.Address">
-				<property name="faltNo" value="212" />
-				<property name="streetName" value="MacArthur Blvd" />
-				<property name="city" value="Dallas" />
-			</bean>
-		</property>
+	<util:list list-class="java.util.LinkedList" id="productNames">
+		<value>Television</value>
+		<value>Mobile</value>
+		<value>Air Condition</value>
+	</util:list>
+
+	<bean class="com.sravan.spring.springcore.ProductList" name="productList">
+		<property name="productNames" ref="productNames"></property>
 	</bean>
 </beans>

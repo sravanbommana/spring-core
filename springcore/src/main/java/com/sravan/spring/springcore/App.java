@@ -5,17 +5,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App 
 {
-	// By default all beans are singleton scope, you can change it to prototype 
+	/*******************************************************************************************************
+	 * The main idea of using stand alone collections is for reusability
+	 * 1. Add util schema in config and create a collection in config.xml file
+	 * 2. now you can use same collection in multiple classes
+	 ******************************************************************************************************/
     public static void main( String[] args )
     {
     	ApplicationContext context = new ClassPathXmlApplicationContext("com/sravan/spring/springcore/config.xml");
-    	Student student = (Student)context.getBean("student");
-        System.out.println(student.toString());
-        System.out.println(student.hashCode());
-        
-        Student student1 = (Student)context.getBean("student");
-        System.out.println(student1.toString());
-        System.out.println(student1.hashCode());
+    	ProductList productList = (ProductList)context.getBean("productList");
+        System.out.println(productList.toString());        
 
     }
 }
