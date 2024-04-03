@@ -6,36 +6,13 @@
 	http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<bean id="hospital" class="com.sravan.spring.springcore.Hospital">
-		<property name="hospitalName" value="Global" />
-		<property name="departments">
-			<list>
-				<value>Cardiology</value>
-				<value>Pediatrics</value>
-				<value>Orthopedics</value>
-			</list>
-
-		</property>
-		<property name="branches">
-			<set>
-				<value>Hyderabad</value>
-				<value>Chennai</value>
-				<value>Benagluru</value>
-			</set>
-		</property>
-		<property name="appointment">
-			<map>
-				<entry key="Alpha" value="11:00"></entry>
-				<entry value="12:00">
-					<key>
-						<value>Beta</value>
-					</key>
-				</entry>
-				<entry key="Gamma">
-					<value>10:00</value>
-				</entry>
-
-			</map>
+	<bean name="countryLanguages" class="com.sravan.spring.springcore.CountryAndLanguages">
+		<property name="countryAndLanguages">
+			<props>
+				<prop key="USA">English</prop>
+				<prop key="Spain">Spanish</prop>
+				<prop key="India">Hindi</prop>
+			</props>
 		</property>
 	</bean>
 	<!--using p schema we achieve the same 

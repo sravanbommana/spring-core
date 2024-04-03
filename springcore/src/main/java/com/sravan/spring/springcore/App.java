@@ -8,8 +8,8 @@ public class App
     public static void main( String[] args )
     {
        ApplicationContext context = new ClassPathXmlApplicationContext("com/sravan/spring/springcore/config.xml");
-       Hospital hospital = (Hospital)context.getBean("hospital");
-       System.out.println(hospital.toString());
+       CountryAndLanguages country = (CountryAndLanguages)context.getBean("countryLanguages");
+       System.out.println(country.toString());
        
     }
 }
