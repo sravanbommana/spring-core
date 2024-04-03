@@ -1,19 +1,25 @@
 package com.sravan.spring.springcore;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Required;
 
 public class Patient {
+	
 	private int id;
 	private String name;
+	private List<String> prescription;
 
 	public int getId() {
 		return id;
 	}
 
+	@Required
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -25,20 +31,19 @@ public class Patient {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	@PostConstruct
-	public void init() {
-		System.out.println("Initialize bean 1");
+
+	public List<String> getPrescription() {
+		return prescription;
 	}
-	
-	@PreDestroy
-	public void destory() {
-		System.out.println("Destorying bean 1");
+
+	public void setPrescription(List<String> prescription) {
+		this.prescription = prescription;
 	}
 
 	@Override
 	public String toString() {
-		return "Patient [id=" + id + ", name=" + name + "]";
+		return "Patient [id=" + id + ", name=" + name + ", prescription=" + prescription + "]";
 	}
 	
+
 }

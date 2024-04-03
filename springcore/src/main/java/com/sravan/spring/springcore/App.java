@@ -11,8 +11,5 @@ public class App
        AbstractApplicationContext context = new ClassPathXmlApplicationContext("com/sravan/spring/springcore/config.xml");
        Patient patient = (Patient)context.getBean("patient");
        System.out.println(patient.toString());
-       
-       // add a shutdown hook for the above context..
-       context.registerShutdownHook();
     }
 }
