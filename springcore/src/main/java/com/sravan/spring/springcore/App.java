@@ -9,7 +9,7 @@ public class App
     public static void main( String[] args )
     {
        AbstractApplicationContext context = new ClassPathXmlApplicationContext("com/sravan/spring/springcore/config.xml");
-       Patient patient = (Patient)context.getBean("patient");
-       System.out.println(patient.toString());
+       MyDAO myDAO = (MyDAO)context.getBean("myDAO");
+       System.out.println(myDAO.toString());
     }
 }

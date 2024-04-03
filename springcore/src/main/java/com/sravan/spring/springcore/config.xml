@@ -6,14 +6,10 @@
 	http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<context:annotation-config></context:annotation-config>
-	<bean name="patient" class="com.sravan.spring.springcore.Patient" 
-		p:id="12"  p:name="Beta">
-		<property name="prescription">
-			<list>
-				<value>MetXl</value>
-				<value>Asprin</value>
-			</list>
+	<context:property-placeholder location="com/sravan/spring/springcore/database.properties"/>
+	<bean name="myDAO" class="com.sravan.spring.springcore.MyDAO">
+		<property name="dbServer">
+			<value>${dbServer}</value>
 		</property>
 	</bean>
 
