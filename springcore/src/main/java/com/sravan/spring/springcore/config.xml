@@ -6,14 +6,16 @@
 	http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<bean name="countryLanguages" class="com.sravan.spring.springcore.CountryAndLanguages">
-		<property name="countryAndLanguages">
-			<props>
-				<prop key="USA">English</prop>
-				<prop key="Spain">Spanish</prop>
-				<prop key="India">Hindi</prop>
-			</props>
-		</property>
+	<bean name="scores" class="com.sravan.spring.springcore.Scores">
+		<property name="mathScore" value="89"></property>
+		<property name="scienceScore" value="90"></property>
+		<property name="socialScore" value="99"></property>
+	</bean>
+	<bean name="student" class="com.sravan.spring.springcore.Student">
+		<property name="scores" ref="scores"></property>
+		<!--<property name="scores">
+			<ref bean="scores" />
+		</property>-->
 	</bean>
 	<!--using p schema we achieve the same 
 	<bean name="student1" class="com.sravan.spring.springcore.Hospital" 
