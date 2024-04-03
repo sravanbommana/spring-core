@@ -1,18 +1,21 @@
 package com.sravan.spring.springcore;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App 
 {
+	// By default all beans are singleton scope, you can change it to prototype 
     public static void main( String[] args )
     {
-       AbstractApplicationContext context = new ClassPathXmlApplicationContext("com/sravan/spring/springcore/config.xml");
-       Patient patient = (Patient)context.getBean("patient");
-       System.out.println(patient.toString());
-       
-       // add a shutdown hook for the above context..
-       context.registerShutdownHook();
+    	ApplicationContext context = new ClassPathXmlApplicationContext("com/sravan/spring/springcore/config.xml");
+    	Student student = (Student)context.getBean("student");
+        System.out.println(student.toString());
+        System.out.println(student.hashCode());
+        
+        Student student1 = (Student)context.getBean("student");
+        System.out.println(student1.toString());
+        System.out.println(student1.hashCode());
+
     }
 }

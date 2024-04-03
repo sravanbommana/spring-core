@@ -6,9 +6,14 @@
 	http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<context:annotation-config></context:annotation-config>
-	<bean name="patient" class="com.sravan.spring.springcore.Patient" 
-		p:id="20" p:name="Beta">
+	<!--<context:annotation-config></context:annotation-config> -->
+	<bean name="student" class="com.sravan.spring.springcore.Student" p:name="Beta" scope="prototype">
+		<property name="address">
+			<bean name="address" class="com.sravan.spring.springcore.Address">
+				<property name="faltNo" value="212" />
+				<property name="streetName" value="MacArthur Blvd" />
+				<property name="city" value="Dallas" />
+			</bean>
+		</property>
 	</bean>
-
 </beans>
