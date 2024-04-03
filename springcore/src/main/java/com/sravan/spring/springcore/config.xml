@@ -6,9 +6,7 @@
 	http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<context:annotation-config></context:annotation-config>
-	<bean name="patient" class="com.sravan.spring.springcore.Patient" 
-		p:id="20" p:name="Beta">
+	<bean name="subject" class="com.sravan.spring.springcore.Science">
 	</bean>
 
 </beans>

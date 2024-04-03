@@ -9,10 +9,9 @@ public class App
     public static void main( String[] args )
     {
        AbstractApplicationContext context = new ClassPathXmlApplicationContext("com/sravan/spring/springcore/config.xml");
-       Patient patient = (Patient)context.getBean("patient");
-       System.out.println(patient.toString());
-       
-       // add a shutdown hook for the above context..
-       context.registerShutdownHook();
+       Subject subject = (Subject)context.getBean("subject");
+       subject.prepareQuestions();
+       subject.correctAnswerPaper();
+       subject.declareResult();
     }
 }
