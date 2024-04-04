@@ -1,16 +1,16 @@
 package com.sravan.spring.springcore.sim;
 
-public class Airtel implements Sim {
+public class Airtel implements ServiceProvider {
 
 	@Override
-	public void call() {
-		System.out.println("Service Provider:: Airtel");
-		
+	public void recharge() {
+		System.out.println("Reachring your airtel numer");
 	}
 
 	@Override
-	public void talk() {
-		System.out.println("Talking from Airtel");
+	public void sendSMS() {
+		System.out.println("Rechared you number succesfully, Thank you for choosing airtel as service provider");
 	}
 
+	
 }

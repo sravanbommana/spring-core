@@ -11,5 +11,5 @@
 	http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 	
-	<bean id="sim" class="com.sravan.spring.springcore.sim.Jio"></bean>
+	<bean id="serviceProvider" class="com.sravan.spring.springcore.sim.Vodafone"></bean>
 </beans>

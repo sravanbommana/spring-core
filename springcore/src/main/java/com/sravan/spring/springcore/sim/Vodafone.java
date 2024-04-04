@@ -1,14 +1,13 @@
 package com.sravan.spring.springcore.sim;
 
-public class Vodafone implements Sim{
+public class Vodafone implements ServiceProvider{
 	@Override
-	public void call() {
-		System.out.println("Service Provider:: Airtel");
-		
+	public void recharge() {
+		System.out.println("Reachring your Vodafone numer");
 	}
 
 	@Override
-	public void talk() {
-		System.out.println("Talking from Airtel");
+	public void sendSMS() {
+		System.out.println("Rechared you number succesfully, Thank you for choosing Vodafone as service provider");
 	}
 }

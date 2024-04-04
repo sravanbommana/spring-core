@@ -1,14 +1,15 @@
 package com.sravan.spring.springcore.sim;
 
-public class Jio implements Sim{
+public class Jio implements ServiceProvider {
+
 	@Override
-	public void call() {
-		System.out.println("Service Provider:: Jio");
-		
+	public void recharge() {
+		System.out.println("Reachring your Jio numer");
 	}
 
 	@Override
-	public void talk() {
-		System.out.println("Talking from Jio");
+	public void sendSMS() {
+		System.out.println("Rechared you number succesfully, Thank you for choosing Jio as service provider");
 	}
+
 }
